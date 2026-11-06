@@ -1,27 +1,71 @@
-# One Pixel Attack 
+# One Pixel Attack
 
-**One pixel. Five search parameters. No gradients.**
+## 1. What is One Pixel Attack?
 
-A PyTorch implementation of score-based, black-box adversarial search, refactored
-from the original project notebook. Differential evolution is implemented manually
-with NumPy; PyTorch handles model training and inference. No SciPy optimizer or
-third-party attack implementation is used.
+One Pixel Attack is an adversarial attack that attempts to change an image
+classifier's prediction by modifying just one pixel. The replacement can change
+all three RGB values at that location while leaving the rest of the image unchanged.
 
-![An original notebook attack example](docs/assets/notebook-example.png)
+The attack uses differential evolution to search for a useful pixel location and
+replacement color. It is a score-based black-box attack: it uses the classifier's
+output probabilities without accessing its gradients. An untargeted attack aims
+to produce any incorrect prediction, while a targeted attack aims to produce a
+specific chosen class. Changing one pixel does not guarantee success or make the
+modification invisible.
 
-*Saved visualization from the supplied notebook, retained as historical evidence;
-it is not a newly generated benchmark result.*
+## 2. How we implemented it
 
-## What is included
+We implemented the classifier inference in **PyTorch** and wrote the core
+**differential evolution algorithm manually using NumPy**, without using SciPy's
+optimizer or an existing attack library. The original project notebook is retained,
+and its attack code is organized into reusable Python modules.
 
-- Untargeted and targeted one-pixel attacks, preserving the notebook's search logic.
-- Handwritten differential mutation, clipping, and parent-child selection.
-- CIFAR-10 ResNet-18 / VGG-16 checkpoint adapters from the notebook.
-- A small CNN training workflow with a held-out validation split.
-- A matched-budget random-search baseline, per-image records, query accounting,
-  confidence vectors, distortion metrics, saved images, and fitness plots.
-- Seeded JSON configurations, a command-line interface, offline tests and GitHub CI.
-- The original notebook, unchanged, plus a provenance record and extracted logs.
+Each candidate contains five values: `(row, column, R, G, B)`. The attack follows
+these steps:
+
+1. **Initialize:** Generate a population of candidate pixel locations and RGB values.
+2. **Evaluate:** Apply each candidate to a fresh copy of the original image and query
+   the classifier. For untargeted attacks, minimize the true-class probability;
+   for targeted attacks, maximize the chosen target-class probability.
+3. **Mutate:** Generate new candidates using `a + F * (b - c)`, with three distinct
+   donors excluding the current parent. No crossover is used.
+4. **Select:** Keep each new candidate only if it improves on its parent.
+5. **Check success:** Use the predicted class to determine success and retain the
+   best successful candidate found. Stop according to the configured stopping rule
+   or generation limit.
+
+The notebook experiments use a population of **400**, up to **100 generations**,
+mutation factor **0.5**, and seed **42**. Coordinates and colors are clipped and
+rounded to valid values, and every output is checked to ensure that at most one
+spatial pixel changed. Only initially correctly classified images are attacked.
+
+The repository also includes a random-search baseline, training and evaluation
+commands, visualizations, and automated tests. These additions are separate from
+the notebook experiments reported below.
+
+## 3. Dataset and models tested
+
+We used **CIFAR-10**, which contains 60,000 RGB images of size 32 × 32 pixels across
+10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck.
+Its official split contains 50,000 training images and 10,000 test images. Its small
+image size makes repeated candidate evaluations practical for this project.
+
+The notebook tests the attack on two pretrained CIFAR-10 classifiers:
+
+| Model | Test images sampled | Initially correct images attacked |
+|---|---:|---:|
+| ResNet-18 | 100 | 96 |
+| VGG-16 with batch normalization | 500 | 469 |
+
+Both models are loaded using `timm` with CIFAR-10 architecture adaptations and
+pretrained weights from Hugging Face. Pixel changes are applied to the original
+32 × 32 images before the model-specific normalization used in the notebook.
+These experiments are **untargeted attacks**; targeted attacks are supported by
+the code, but no targeted CIFAR-10 benchmark results are reported here.
+
+A separate small CNN training workflow is included for further experiments. It
+has been checked with synthetic training data, but no full CIFAR-10 training
+results are claimed for it.
 
 ## Results and evidence
 
