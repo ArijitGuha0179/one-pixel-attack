@@ -1,0 +1,13 @@
+{
+  "model": "resnet18",
+  "seed": 42,
+  "samples": 5,
+  "population_size": 12,
+  "generations": 2,
+  "mutation_factor": 0.5,
+  "stop_rule": "success",
+  "method": "de",
+  "targeted": false,
+  "batch_size": 12,
+  "save_examples": 2
+}

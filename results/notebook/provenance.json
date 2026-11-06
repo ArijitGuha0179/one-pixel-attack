@@ -1,0 +1,24 @@
+{
+  "source": "notebooks/one-pixel-attack.ipynb",
+  "sha256": "7524486890782d77aa6048687c492a961fb364c8de1eb00f66f9881f61bf8a28",
+  "status": "saved notebook outputs; not independently rerun",
+  "paper": "https://arxiv.org/html/1710.08864v6",
+  "paper_file_status": "Referenced /mnt/data PDF unavailable; public author paper consulted instead",
+  "resnet18": {
+    "full_test_accuracy": 0.9498,
+    "sample_size": 100,
+    "attempted": 96,
+    "successful": 35,
+    "accuracy_before": 0.96,
+    "accuracy_after": 0.61,
+    "mean_attack_queries": 26425.0
+  },
+  "vgg16": {
+    "sample_size": 500,
+    "attempted": 469,
+    "successful": 222,
+    "accuracy_before": 0.938,
+    "accuracy_after": 0.494,
+    "mean_attack_queries": 22162.0
+  }
+}

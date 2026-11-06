@@ -1,0 +1,20 @@
+test_deterministic (test_core.CoreTests.test_deterministic) ... ok
+test_donors_distinct_and_exclude_parent (test_core.CoreTests.test_donors_distinct_and_exclude_parent) ... ok
+test_exact_query_accounting_and_budget (test_core.CoreTests.test_exact_query_accounting_and_budget) ... ok
+test_invalid_candidate_probabilities (test_core.CoreTests.test_invalid_candidate_probabilities) ... ok
+test_invalid_inputs (test_core.CoreTests.test_invalid_inputs) ... ok
+test_metrics_denominators (test_core.CoreTests.test_metrics_denominators) ... ok
+test_notebook_parity (test_core.CoreTests.test_notebook_parity) ... ok
+test_perturbation_clips_rounds_and_preserves_source (test_core.CoreTests.test_perturbation_clips_rounds_and_preserves_source) ... ok
+test_preserve_success_even_if_unsuccessful_candidate_has_better_objective (test_core.CoreTests.test_preserve_success_even_if_unsuccessful_candidate_has_better_objective) ... ok
+test_saved_notebook_metrics_arithmetic (test_core.CoreTests.test_saved_notebook_metrics_arithmetic) ... ok
+test_selection_retains_parent_on_tie (test_core.CoreTests.test_selection_retains_parent_on_tie) ... ok
+test_targeted_and_untargeted (test_core.CoreTests.test_targeted_and_untargeted) ... ok
+test_zero_generations_still_evaluates_initial_population (test_core.CoreTests.test_zero_generations_still_evaluates_initial_population) ... ok
+test_evaluate_writes_consistent_outputs_and_plots (test_pipeline.PipelineTests.test_evaluate_writes_consistent_outputs_and_plots) ... ok
+test_predictor_normalization_and_batching (test_torch.TorchTests.test_predictor_normalization_and_batching) ... ok
+test_pretrained_architecture_shapes_without_downloads (test_torch.TorchTests.test_pretrained_architecture_shapes_without_downloads) ... ok
+test_torch_attack_integration (test_torch.TorchTests.test_torch_attack_integration) ... ok
+test_training_step_and_checkpoint_roundtrip (test_torch.TorchTests.test_training_step_and_checkpoint_roundtrip) ... ok
+Ran 18 tests in 9.100s
+OK

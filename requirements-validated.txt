@@ -1,0 +1,21 @@
+# Observed Windows CPU validation environment, Python 3.12.14.
+# Not a universal lockfile. Install CPU torch/torchvision via the PyTorch CPU index.
+# Source package constraints are in pyproject.toml.
+numpy==2.5.4
+torch==2.15.0+cpu
+torchvision==0.29.2+cpu
+timm==1.0.31
+matplotlib==3.11.2
+pillow==13.0.0
+safetensors==0.8.0
+huggingface_hub==2.4.0
+pyyaml==6.0.3
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.68.0
+kiwisolver==1.5.1
+pyparsing==3.3.3
+python-dateutil==3.0.0
+setuptools==78.1.0
+build==1.6.1
+ruff==0.17.4

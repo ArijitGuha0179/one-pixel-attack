@@ -1,0 +1,13 @@
+{
+  "model": "small_cnn",
+  "seed": 42,
+  "samples": 100,
+  "population_size": 400,
+  "generations": 100,
+  "mutation_factor": 0.5,
+  "stop_rule": "success",
+  "method": "de",
+  "targeted": false,
+  "batch_size": 64,
+  "save_examples": 6
+}

@@ -1,0 +1,7 @@
+include LICENSE README.md requirements*.txt
+recursive-include configs *.json
+recursive-include docs *.md *.png
+recursive-include notebooks *.ipynb
+recursive-include results *.md *.json *.txt
+recursive-include tests *.py
+recursive-include examples *.py

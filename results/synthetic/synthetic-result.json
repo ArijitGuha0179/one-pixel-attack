@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "candidate": [
+    3,
+    4,
+    136,
+    0,
+    0
+  ],
+  "clean_prediction": 0,
+  "adversarial_prediction": 1,
+  "clean_probabilities": [
+    0.9958899617195129,
+    0.004110072273761034
+  ],
+  "adversarial_probabilities": [
+    0.36973968148231506,
+    0.6302603483200073
+  ],
+  "attack_queries": 320,
+  "total_queries": 321,
+  "generations": 4,
+  "changed_pixels": 1,
+  "pixel_mae": 58.666666666666664,
+  "fitness_history": [
+    0.7726840972900391,
+    0.7726840972900391,
+    0.7726840972900391,
+    0.7726840972900391,
+    0.36973968148231506
+  ],
+  "evidence_type": "synthetic functionality demo; not a dataset benchmark"
+}

@@ -1,0 +1,244 @@
+CELL 0 (2be1c2b2)
+PyTorch: 2.11.0+cu130
+Device: cuda
+
+
+CELL 1 (30fff519)
+100%|██████████| 170M/170M [38:31<00:00, 73.8kB/s]
+
+
+CELL 1 (30fff519)
+Training images: 50000
+Test images: 10000
+Classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+
+CELL 2 (a7529ee9)
+Raw image:
+  shape: (32, 32, 3)
+  dtype: uint8
+  range: 13 255
+
+Model input:
+  shape: torch.Size([3, 32, 32])
+  dtype: torch.float32
+  range: 0.05098039284348488 1.0
+
+Label: 3 → cat
+
+
+CELL 5 (2f25e31a)
+Images: torch.Size([128, 3, 32, 32])
+Labels: torch.Size([128])
+
+
+CELL 10 (6873ef68)
+Note: you may need to restart the kernel to use updated packages.
+
+
+CELL 11 (848952c3)
+Downloading: "https://huggingface.co/edadaltocg/resnet18_cifar10/resolve/main/pytorch_model.bin" to /root/.cache/torch/hub/checkpoints/edadaltocg_resnet18_cifar10.pth
+
+
+CELL 11 (848952c3)
+100%|██████████| 42.7M/42.7M [00:00<00:00, 57.0MB/s]
+
+
+CELL 11 (848952c3)
+CIFAR-10 ResNet-18 loaded.
+
+
+CELL 20 (eaec9221)
+Clean test accuracy: 94.98%
+
+
+CELL 22 (7f1bdfa4)
+CIFAR-10 image index: 888
+Actual class: airplane
+Before: airplane
+After: ship
+Attack success: True
+Changed pixels: 1
+Attack queries: 400
+True-class probability: 0.958 → 0.390
+
+
+CELL 25 (8fb49e61)
+Image 4363: truck → truck | success=False
+Image 6684: ship → ship | success=False
+Image 4645: deer → deer | success=False
+Image 4473: deer → deer | success=False
+Image 7744: deer → deer | success=False
+Image 1536: dog → cat | success=True
+Image 3247: cat → cat | success=False
+Image 1642: dog → cat | success=True
+Image 7113: truck → automobile | success=True
+Image 1811: automobile → ship | success=True
+Image 4955: bird → airplane | success=True
+Image 4289: horse → horse | success=False
+Image 8168: frog → cat | success=True
+Image 3692: deer → deer | success=False
+Image 6909: deer → deer | success=False
+Image 1996: cat → frog | success=True
+Image 8821: horse → horse | success=False
+Image 9640: dog → dog | success=False
+Image 2256: deer → deer | success=False
+Image 9189: deer → deer | success=False
+Image 8884: airplane → airplane | success=False
+Image 1270: automobile → automobile | success=False
+Image 1604: automobile → automobile | success=False
+Image 8329: ship → ship | success=False
+Image 7933: cat → bird | success=True
+Image 1889: truck → truck | success=False
+Image 1397: airplane → airplane | success=False
+Image 5509: horse → cat | success=True
+Image 6992: deer → cat | success=True
+Image 5217: automobile → automobile | success=False
+Image 5415: deer → horse | success=True
+Image 2882: horse → horse | success=False
+Image 9025: dog → dog | success=False
+Image 7794: dog → deer | success=True
+Image 6391: truck → automobile | success=True
+Image 7669: horse → deer | success=True
+Image 915: automobile → automobile | success=False
+Image 8411: ship → ship | success=False
+Image 5442: bird → bird | success=False
+Image 3872: horse → horse | success=False
+Image 4403: ship → automobile | success=True
+Image 4745: horse → horse | success=False
+Image 6288: frog → cat | success=True
+Image 675: airplane → ship | success=True
+Image 7545: dog → cat | success=True
+Image 2264: airplane → airplane | success=False
+Image 6482: horse → horse | success=False
+Image 8976: horse → airplane | success=True
+Image 6803: frog → bird | success=True
+Image 3652: bird → bird | success=False
+Image 4433: dog → dog | success=False
+Image 4616: deer → deer | success=False
+Image 9197: automobile → automobile | success=False
+Image 5089: frog → frog | success=False
+Image 7293: horse → horse | success=False
+Image 7403: deer → bird | success=True
+Image 3994: ship → ship | success=False
+Image 3679: airplane → airplane | success=False
+Image 7663: bird → bird | success=False
+Image 761: frog → deer | success=True
+Image 6366: ship → airplane | success=True
+Image 6823: dog → cat | success=True
+Image 8224: cat → cat | success=False
+Image 851: truck → truck | success=False
+Image 2750: dog → dog | success=False
+Image 971: deer → deer | success=False
+Image 9654: dog → cat | success=True
+Image 7536: ship → automobile | success=True
+Image 436: bird → cat | success=True
+Image 8505: dog → cat | success=True
+Image 6965: frog → dog | success=True
+Image 4348: ship → ship | success=False
+Image 8528: cat → cat | success=False
+Image 1937: automobile → truck | success=True
+Image 3621: deer → dog | success=True
+Image 634: horse → horse | success=False
+Image 933: bird → cat | success=True
+Image 4963: cat → bird | success=True
+Image 9670: automobile → automobile | success=False
+Image 4346: cat → cat | success=False
+Image 3119: deer → deer | success=False
+Image 8041: ship → airplane | success=True
+Image 6278: dog → dog | success=False
+Image 6744: cat → cat | success=False
+Image 4681: truck → truck | success=False
+Image 7757: frog → frog | success=False
+Image 4094: cat → dog | success=True
+Image 3525: bird → bird | success=False
+Image 7419: airplane → airplane | success=False
+Image 1295: airplane → airplane | success=False
+Image 6847: ship → ship | success=False
+Image 3294: airplane → airplane | success=False
+Image 883: airplane → airplane | success=False
+Image 5633: deer → deer | success=False
+Image 4467: cat → cat | success=False
+Image 8313: frog → frog | success=False
+
+
+CELL 26 (2c067076)
+
+Comparison on the SAME 100 CIFAR-10 images
+Accuracy before attack: 96.00%
+Accuracy after attack:  61.00%
+Attacks attempted:      96
+Successful attacks:    35
+Attack success rate:    36.46%
+Mean attack queries:   26425.0
+
+
+CELL 28 (e927c14d)
+Downloading: "https://huggingface.co/edadaltocg/vgg16_bn_cifar10/resolve/main/pytorch_model.bin" to /root/.cache/torch/hub/checkpoints/edadaltocg_vgg16_bn_cifar10.pth
+
+
+CELL 28 (e927c14d)
+100%|██████████| 56.2M/56.2M [00:01<00:00, 51.1MB/s]
+
+
+CELL 29 (aad53030)
+Processed 10/500 | Attacked: 10 | Successful: 5
+Processed 20/500 | Attacked: 20 | Successful: 11
+Processed 30/500 | Attacked: 29 | Successful: 17
+Processed 40/500 | Attacked: 39 | Successful: 20
+Processed 50/500 | Attacked: 48 | Successful: 23
+Processed 60/500 | Attacked: 58 | Successful: 30
+Processed 70/500 | Attacked: 67 | Successful: 34
+Processed 80/500 | Attacked: 76 | Successful: 38
+Processed 90/500 | Attacked: 85 | Successful: 43
+Processed 100/500 | Attacked: 94 | Successful: 49
+Processed 110/500 | Attacked: 102 | Successful: 51
+Processed 120/500 | Attacked: 112 | Successful: 57
+Processed 130/500 | Attacked: 121 | Successful: 61
+Processed 140/500 | Attacked: 130 | Successful: 66
+Processed 150/500 | Attacked: 140 | Successful: 71
+Processed 160/500 | Attacked: 150 | Successful: 73
+Processed 170/500 | Attacked: 160 | Successful: 78
+Processed 180/500 | Attacked: 169 | Successful: 83
+Processed 190/500 | Attacked: 178 | Successful: 87
+Processed 200/500 | Attacked: 186 | Successful: 93
+Processed 210/500 | Attacked: 196 | Successful: 96
+Processed 220/500 | Attacked: 206 | Successful: 101
+Processed 230/500 | Attacked: 215 | Successful: 105
+Processed 240/500 | Attacked: 225 | Successful: 109
+Processed 250/500 | Attacked: 235 | Successful: 113
+Processed 260/500 | Attacked: 244 | Successful: 118
+Processed 270/500 | Attacked: 254 | Successful: 124
+Processed 280/500 | Attacked: 263 | Successful: 130
+Processed 290/500 | Attacked: 271 | Successful: 135
+Processed 300/500 | Attacked: 280 | Successful: 138
+Processed 310/500 | Attacked: 290 | Successful: 144
+Processed 320/500 | Attacked: 299 | Successful: 150
+Processed 330/500 | Attacked: 309 | Successful: 156
+Processed 340/500 | Attacked: 318 | Successful: 161
+Processed 350/500 | Attacked: 328 | Successful: 164
+Processed 360/500 | Attacked: 336 | Successful: 169
+Processed 370/500 | Attacked: 346 | Successful: 173
+Processed 380/500 | Attacked: 356 | Successful: 174
+Processed 390/500 | Attacked: 366 | Successful: 177
+Processed 400/500 | Attacked: 376 | Successful: 181
+Processed 410/500 | Attacked: 385 | Successful: 186
+Processed 420/500 | Attacked: 395 | Successful: 190
+Processed 430/500 | Attacked: 405 | Successful: 192
+Processed 440/500 | Attacked: 414 | Successful: 194
+Processed 450/500 | Attacked: 424 | Successful: 199
+Processed 460/500 | Attacked: 432 | Successful: 205
+Processed 470/500 | Attacked: 440 | Successful: 209
+Processed 480/500 | Attacked: 450 | Successful: 214
+Processed 490/500 | Attacked: 459 | Successful: 219
+Processed 500/500 | Attacked: 469 | Successful: 222
+
+VGG-16: before vs after One Pixel Attack
+Images evaluated:       500
+Accuracy before attack: 93.80%
+Accuracy after attack:  49.40%
+Images attacked:        469
+Successful attacks:     222
+Attack success rate:    47.33%
+Mean attack queries:    22162.0
+Results saved to: vgg_one_pixel_10k.jsonl
