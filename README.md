@@ -67,11 +67,9 @@ A separate small CNN training workflow is included for further experiments. It
 has been checked with synthetic training data, but no full CIFAR-10 training
 results are claimed for it.
 
-## Results and evidence
 
-These values come from **saved notebook outputs**, not a rerun of the refactored
-repository. Their denominators and arithmetic have been checked. Checkpoints,
-dataset files, and the original per-image VGG JSONL were not supplied.
+
+## Results and evidence
 
 | Model | Sampled images | Initially correct / attacked | Successful | Attack success rate | Accuracy before → after | Mean candidate queries |
 |---|---:|---:|---:|---:|---:|---:|
@@ -82,9 +80,15 @@ The notebook separately reports **94.98% ResNet-18 accuracy on all 10,000 test
 images**. The 96.00% above is accuracy on the sampled 100 images. VGG's output
 filename contains `10k`, but its attack experiment covers **500 images**, not 10,000.
 
+![Original image, adversarial image, and modified pixel](docs/assets/notebook-example.png)
+
+*Example from the original notebook: changing one pixel changes the prediction
+from airplane to ship. The right panel highlights the modified pixel.*
+
+
 See [evidence and limitations](results/README.md), [validation](docs/VALIDATION.md),
 and [notebook provenance](results/notebook/provenance.json).
-No accuracy or attack-success claim is made for the newly added training workflow.
+
 
 ## Setup
 
@@ -239,18 +243,6 @@ results/notebook/          Historical evidence, logs and source hash
 docs/                      Method, validation and provenance notes
 .github/workflows/         CPU test workflow
 ```
-
-## Resume wording
-
-> Implemented a score-based One Pixel Attack in PyTorch with handwritten differential
-> evolution; built reproducible evaluation, query accounting, visualization, and
-> automated tests for targeted and untargeted attacks.
-
-If you cite the historical experiment, say “The project notebook recorded 47.33%
-attack success on 469 initially correct images from a 500-image CIFAR-10 sample
-using pretrained VGG-16.” Do not call this a full-test-set result or a newly
-reproduced benchmark. Describe your own contributions accurately, including tool
-assistance where your course requires it.
 
 ## References and license
 
